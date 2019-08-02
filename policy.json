@@ -25,10 +25,12 @@
             "Action": [
                 "ec2:DescribeAddresses",
                 "ec2:DescribeSnapshots",
+                "ec2:DescribeSubnets",
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "autoscaling:DescribeAutoScalingGroups",
                 "ce:GetCostAndUsage",
-                "s3:ListAllMyBuckets"
+                "s3:ListAllMyBuckets",
+                "apigateway:GET"
             ],
             "Resource": "*"
         },
@@ -42,9 +44,9 @@
                 "rds:DescribeDBInstances",
                 "cloudwatch:DescribeAlarms",
                 "cloudfront:ListDistributions",
-                "ecs:DescribeClusters",
-                "ecs:DescribeServices",
-                "ecs:DescribeTasks"
+                "ecs:ListServices",
+                "ecs:ListTasks",
+                "ecs:ListClusters"
             ],
             "Resource": "*"
         },
@@ -58,7 +60,9 @@
                 "iam:ListGroups",
                 "iam:ListRoles",
                 "iam:ListPolicies",
-                "iam:ListUsers"
+                "iam:ListUsers",
+                "s3:GetBucketLocation",
+                "apigateway:GET"
             ],
             "Resource": "*"
         },
@@ -78,7 +82,8 @@
                 "ec2:DescribeScheduledInstances",
                 "eks:ListClusters",
                 "elasticache:DescribeCacheClusters",
-                "es:ListDomainNames"
+                "es:ListDomainNames",
+                "logs:DescribeLogGroups"
             ],
             "Resource": "*"
         },
@@ -96,9 +101,7 @@
                 "redshift:DescribeClusters",
                 "tag:GetResources",
                 "route53:ListResourceRecordSets",
-                "s3:ListAllMyBuckets",
-                "support:DescribeCases",
-                "support:DescribeTrustedAdvisorChecks",
+                "support:*",
                 "swf:ListDomains"
             ],
             "Resource": "*"
